@@ -47,8 +47,11 @@ Make sure you have all required libraries installed. Run:
 pip install -r requirements.txt
 ```
 
-### **2️⃣ Dataset Placement** 
-Ensure the dataset path is correctly mentioned.
+### 2️⃣ Pre-Run Checklist
+1. Dataset paths
+2. Hugging face token
+3. Wandb API key
+4. Fine tuned model path
 
 ### **3️⃣ Running the Models**  
 Each notebook performs a specific function:
@@ -57,7 +60,7 @@ Each notebook performs a specific function:
 | `TF-IDF_XGBoost.ipynb`    | Train and evaluate TF-IDF + XGBoost model      |
 | `peft_GPT2.ipynb`         | Fine-tune GPT-2 Large using PEFT               |
 | `peft_llama.ipynb`        | Fine-tune Llama 3.1 1B using PEFT              |
-| `ensemble.py`          | Combine models using voting ensemble           |
+| `ensemble.py`             | Combine models using voting ensemble           |
 
 - Run TF-IDF_XGBoost.ipynb first to generate baseline results (file1.csv).
 - Next fine-tune [Llama 3.1 1B](https://huggingface.co/meta-llama/Llama-3.2-1B) with peft_llama.ipynb and then generate results on validation.csv (file2.csv).
