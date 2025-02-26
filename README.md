@@ -28,8 +28,7 @@ Food-Hazard-Detection-SemEval-2025/
 │   │── README.md                 # Task 2 details 
 │── LICENSE                       # License information 
 │── README.md                     # Main project documentation 
-│── requirements.txt              # Python dependencies 
-│── .gitignore                    # Ignore unnecessary files
+└── requirements.txt              # Python dependencies 
 ```
 
 ## 📂 Dataset Details  
