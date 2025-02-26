@@ -1,0 +1,26 @@
+# Core Python Libraries
+numpy==1.24.3
+pandas==1.5.3
+scikit-learn==1.2.2
+
+# Machine Learning & NLP
+xgboost==1.7.4
+transformers==4.39.3
+torch==2.2.0
+sentencepiece==0.1.99
+accelerate==0.26.1
+datasets==2.17.1
+
+# Fine-Tuning & LoRA (PEFT)
+peft==0.9.0
+bitsandbytes==0.41.3
+
+# Evaluation & Logging
+wandb==0.16.2
+matplotlib==3.7.1
+seaborn==0.12.2
+tqdm==4.65.0
+
+# Utility & Environment
+python-dotenv==1.0.1
+jupyterlab==4.0.0
