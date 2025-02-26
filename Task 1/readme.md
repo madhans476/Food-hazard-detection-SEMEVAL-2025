@@ -3,9 +3,12 @@
 ## 📌 Task Overview  
 Task 1 focuses on classifying food recall notices into **hazard categories** and **product categories** based on textual descriptions. The dataset contains structured recall information, including product descriptions and reasons for recall.  
 
-We experimented with multiple models and techniques, including **TF-IDF + XGBoost**, **Parameter-Efficient Fine-Tuning (PEFT) of LLMs([GPT-2 large](https://huggingface.co/openai-community/gpt2-large), [Llama 3.1 1B](https://huggingface.co/meta-llama/Llama-3.2-1B) )**, and an **Ensemble Model** for improved performance.  
+To improve classification, we preprocess and extract meaningful features:  
 
----
+- **TF-IDF Vectorization**: Converts text into numerical representation based on term importance.  
+- **Pretrained Language Models**: Fine-tuned **GPT-2 Large** and **LLaMA 3.1 1B** for contextual understanding.  
+- **Ensemble Learning**: Combines multiple models to improve generalization. (Only for Hazard category, for Product category only fine-tuned LLaMA 3.1 1B)
+
 
 ## 📊 Features Used  
 We used the following features for classification:  
@@ -19,7 +22,6 @@ We used the following features for classification:
   - **Hazard Category (h-c)**: One of 10 categories. 
   - **Product Category (p-c)**: One of 22 categories.   
 
----
 
 ## ⚙️ Approach & Models Used  
 We followed a **progressive approach** to improve classification performance:  
@@ -36,7 +38,6 @@ We followed a **progressive approach** to improve classification performance:
 - Combined **TF-IDF + XGBoost, GPT-2, and LLaMA** predictions.  
 - Used **hard voting** (majority rule) to determine final labels.   
 
----
 
 ## 🚀 How to Use the Code?  
 ### **1️⃣ Install Dependencies**  
@@ -54,19 +55,21 @@ Each notebook performs a specific function:
 | Notebook                  | Purpose                                        |
 |---------------------------|------------------------------------------------|
 | `TF-IDF_XGBoost.ipynb`    | Train and evaluate TF-IDF + XGBoost model      |
-| `peft.ipynb`              | Fine-tune GPT-2 / LLaMA using PEFT             |
-| `ensemble.ipynb`          | Combine models using voting ensemble           |
+| `peft_GPT2.ipynb`         | Fine-tune GPT-2 Large using PEFT               |
+| `peft_llama.ipynb`        | Fine-tune Llama 3.1 1B using PEFT              |
+| `ensemble.py`          | Combine models using voting ensemble           |
 
-- Run TF-IDF_XGBoost.ipynb first to generate baseline results.
-- Then, execute peft.ipynb for LLM fine-tuning.
-    - First fine-tune [GPT-2 large](https://huggingface.co/openai-community/gpt2-large) with peft.ipynb and then generate results on test.csv.
-    - Next fine-tune [Llama 3.1 1B](https://huggingface.co/meta-llama/Llama-3.2-1B) with peft.ipynb and then generate results on test.csv.
-- Finally, run ensemble.ipynb to make final predictions.
+- Run TF-IDF_XGBoost.ipynb first to generate baseline results (file1.csv).
+- Next fine-tune [Llama 3.1 1B](https://huggingface.co/meta-llama/Llama-3.2-1B) with peft_llama.ipynb and then generate results on validation.csv (file2.csv).
+- Then fine-tune [GPT-2 large](https://huggingface.co/openai-community/gpt2-large) with peft_GPT2.ipynb and then generate results on validation.csv (file3.csv).
+- Finally, run ensemble.py to make final predictions.
 
+## 📊 Model Performance
 
-
-
-
-
-
+|Model	                  |F1-Score    |
+|-------------------------|------------|
+|TF-IDF + XGBoost	        |0.75        |
+|GPT-2 Large (Fine-tuned)	|0.72        |
+|LLaMA 3.1 1B (Fine-tuned)|0.76        |
+|Ensemble	                |0.78        |
 
