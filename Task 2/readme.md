@@ -46,7 +46,7 @@ Run the following command to install required libraries:
 pip install -r requirements.txt
 ```
 
-### 2️⃣ Thinks to check!!!
+### 2️⃣ Pre-Run Checklist
 1. Dataset paths
 2. Hugging face token
 3. Wandb API key
