@@ -37,7 +37,9 @@ Food-Hazard-Detection-SemEval-2025/
 - **Size**: ~7,546 recall notices.  
 - **Labels**:  
   - **Hazard Categories**: 10 classes (e.g., Biological, Chemical, Physical).  
-  - **Product Categories**: 22 classes (e.g., Beverages, Dairy, Meat).  
+  - **Product Categories**: 22 classes (e.g., Beverages, Dairy, Meat).
+  - **product** → The exact food product name in the recall notice.  
+  - **hazard** → The exact hazard reason in the recall notice.  
 
 📌 **More details**: See [`Datasets/README.md`](Datasets/readme.md).  
 
