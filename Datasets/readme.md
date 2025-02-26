@@ -24,8 +24,8 @@ Each CSV file contains the following columns:
 | `text`      | Full description of the recall, including the product name, reason for recall, and manufacturer details. |
 | `product-category` | Category of the food product (e.g., Dairy, Meat, Beverages). *(Used in ST1 - Classification)* |
 | `hazard-category`  | Type of hazard detected (e.g., Biological, Chemical, Physical). *(Used in ST1 - Classification)* |
-| `product`   | Extracted product name as a structured vector. *(Used in ST2 - Extraction)* |
-| `hazard`    | Extracted hazard reason as a structured vector. *(Used in ST2 - Extraction)* |
+| `product`   | Mentioned product name. *(Used in ST2 - Extraction)* |
+| `hazard`    | Mentioned hazard reason. *(Used in ST2 - Extraction)* |
 
 
 
